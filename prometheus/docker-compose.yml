@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  promtheus:
+    image: prom/prometheus:latest
+    container_name: "prometheus"
+    restart: always
+    ports:
+      - 9090:9090
+    volumes: 
+      - ${DOCKER_WORKDIR}/prometheus/config/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ${DOCKER_WORKDIR}/prometheus/data:/prometheus

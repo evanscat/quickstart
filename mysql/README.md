@@ -1,4 +1,4 @@
-#MYSQL
+#MYSQL 
 
 ##build image with init script
 
@@ -14,9 +14,9 @@ COPY init/* /docker-entrypoint-initdb.d/
 docker build -t  evanscat/mysql .
 ```
 
-##docker
+##docker 
 
-- **create and run container with docker**
+- **create and run container with docker** 
 
 ```shell
 docker run \
@@ -28,13 +28,13 @@ docker run \
 -d my/mysql
 ```
 
-- **stop  container**
+- **stop  container ** 
 
 ```shell
 docker stop `docker ps|grep mysql|cut -d ' ' -f 1`
 ```
 
-##docker-compose
+##docker-compose 
 
 - **create and run container with docker-compose**
 
@@ -42,9 +42,9 @@ docker stop `docker ps|grep mysql|cut -d ' ' -f 1`
 docker-compose up -d
 ```
 
-## Ohter
+## Other 
 
-- **change password encrypt **
+- **change password encrypt ** 
 
 ```sql
 CREATE USER 'root'@'%' IDENTIFIED BY '123456';

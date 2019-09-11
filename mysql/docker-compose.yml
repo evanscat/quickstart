@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  db:
+    image: evanscat/mysql:latest
+    restart: always
+    container_name: "mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - 3306:3306
+    volumes: 
+      - ${DOCKER_WORKDIR}/mysql/data:/var/lib/mysql
+      - ${DOCKER_WORKDIR}/mysql/config:/etc/mysql/conf.d
+    networks:
+      - mynet
+networks:
+  mynet:
+    driver: bridge

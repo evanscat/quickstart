@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  promtheus:
+    image: grafana/grafana:latest
+    container_name: "grafana"
+    restart: always
+    ports:
+      - 3000:3000
+    volumes: 
+      - ${DOCKER_WORKDIR}/grafana/data:/var/lib/grafana
+      - ${DOCKER_WORKDIR}/grafana/config/grafana.ini:/etc/grafana/grafana.ini

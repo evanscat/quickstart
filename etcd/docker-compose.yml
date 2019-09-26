@@ -1,0 +1,13 @@
+version: "3.5"
+services: 
+  etcd:
+    image: "etcd:latest"
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: etcd
+    ports: 
+      - "2379:2379"
+      - "2380:2380"
+    restart: always
+    command: --listen-client-urls http://0.0.0.0:2379 --advertise-client-urls http://192.168.1.77:2379

@@ -66,7 +66,7 @@ docker run -itd  -p 2380:2380 -p 2379:2379 etcd:latest \
     --advertise-client-urls http://192.168.1.77:2379 \
 ```
 
-###使用docker-compose构建并运行(build & run using docker-compose )
+### 使用docker-compose构建并运行(build & run using docker-compose )
 
 ```yaml
 version: "3.5"

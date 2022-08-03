@@ -1,15 +1,15 @@
 version: '3'
 
-services: 
+services:
   redis:
-    image: redis:latest
+    image: redis:7.0
     container_name: "redis"
     restart: always
     ports:
       - 6379:6379
-    volumes: 
-      - ${DOCKER_WORKDIR}/reids/data:/data
+    volumes:
+      - ./data:/data
     # command: redis-server --appendonly yes
-networks: 
+networks:
   redisnet:
     driver: bridge

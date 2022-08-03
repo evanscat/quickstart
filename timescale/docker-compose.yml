@@ -1,0 +1,15 @@
+version: "3.1"
+services:
+  timescale:
+    image: timescale/timescaledb
+    container_name: timescale
+    environment:
+      POSTGRES_PASSWORD: evanscat
+      POSTGRES_USER:  evanscat
+      POSTGRES_DB: evanscat
+      TZ: Asia/Shanghai
+    ports:
+      - 5453:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    restart: always

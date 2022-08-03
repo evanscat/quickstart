@@ -1,0 +1,24 @@
+version: "3.1"
+services:
+  postgresql:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: evanscat
+      POSTGRES_USER:  evanscat
+      POSTGRES_DB: evanscat
+      TZ: Asia/Shanghai
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    restart: always
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: evanscat@163.com
+      PGADMIN_DEFAULT_PASSWORD: evanscat
+    ports:
+     - 5433:80
+    restart: always

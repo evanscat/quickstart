@@ -1,2 +1,5 @@
 **/*-download
+**/data
+**/.*
+.idea
 var

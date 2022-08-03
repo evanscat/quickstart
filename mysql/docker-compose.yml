@@ -1,9 +1,8 @@
 version: '3'
 
 services:
-
   db:
-    image: evanscat/mysql:latest
+    image: mysql:8.0
     restart: always
     container_name: "mysql"
     environment:
@@ -11,10 +10,4 @@ services:
     ports:
       - 3306:3306
     volumes: 
-      - ${DOCKER_WORKDIR}/mysql/data:/var/lib/mysql
-      - ${DOCKER_WORKDIR}/mysql/config:/etc/mysql/conf.d
-    networks:
-      - mynet
-networks:
-  mynet:
-    driver: bridge
+      - ./data:/var/lib/mysql
